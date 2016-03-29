@@ -1,32 +1,136 @@
-<%= simple_form_for(@user_profile) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :first_name %>
-    <%= f.input :middle_name %>
-    <%= f.input :surname %>
-    <%= f.input :sex %>
-    <%= f.input :birthdate %>
-    <%= f.input :height %>
-    <%= f.input :weight %>
-    <%= f.input :smoker %>
-    <%= f.input :address1 %>
-    <%= f.input :address2 %>
-    <%= f.input :address3 %>
-    <%= f.input :suburb %>
-    <%= f.input :state %>
-    <%= f.input :country %>
-    <%= f.input :postcode %>
-    <%= f.input :email1 %>
-    <%= f.input :email2 %>
-    <%= f.input :phone_home %>
-    <%= f.input :phone_mob %>
-    <%= f.input :profession %>
-    <%= f.input :title %>
+<%= form_for @user_profile, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :first_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :middle_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :middle_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :surname, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :surname, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sex, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :sex, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :birthdate, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :birthdate, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :height, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :height, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :smoker, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :smoker, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address3, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address3, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :suburb, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :suburb, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :country, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :postcode, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :postcode, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :email1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :email2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_home, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :phone_home, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_mob, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :phone_mob, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :profession, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :profession, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  user_profiles_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

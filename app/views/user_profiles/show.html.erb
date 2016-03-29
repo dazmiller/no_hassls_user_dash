@@ -1,114 +1,64 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = UserProfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => UserProfile %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @user_profile.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:middle_name) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.middle_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:surname) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.surname %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sex) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.sex %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:birthdate) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.birthdate %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:height) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.height %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.weight %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:smoker) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.smoker %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address1) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.address1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address2) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.address2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address3) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.address3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:suburb) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.suburb %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.country %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:postcode) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.postcode %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email1) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.email1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email2) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.email2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_home) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.phone_home %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_mob) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.phone_mob %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:profession) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.profession %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @user_profile.title %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user_profile.first_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              user_profiles_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_profile_path(@user_profile), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_profile_path(@user_profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Middle name:</strong>
-  <%= @user_profile.middle_name %>
-</p>
-
-<p>
-  <strong>Surname:</strong>
-  <%= @user_profile.surname %>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @user_profile.sex %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user_profile.birthdate %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @user_profile.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @user_profile.weight %>
-</p>
-
-<p>
-  <strong>Smoker:</strong>
-  <%= @user_profile.smoker %>
-</p>
-
-<p>
-  <strong>Address1:</strong>
-  <%= @user_profile.address1 %>
-</p>
-
-<p>
-  <strong>Address2:</strong>
-  <%= @user_profile.address2 %>
-</p>
-
-<p>
-  <strong>Address3:</strong>
-  <%= @user_profile.address3 %>
-</p>
-
-<p>
-  <strong>Suburb:</strong>
-  <%= @user_profile.suburb %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user_profile.state %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @user_profile.country %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @user_profile.postcode %>
-</p>
-
-<p>
-  <strong>Email1:</strong>
-  <%= @user_profile.email1 %>
-</p>
-
-<p>
-  <strong>Email2:</strong>
-  <%= @user_profile.email2 %>
-</p>
-
-<p>
-  <strong>Phone home:</strong>
-  <%= @user_profile.phone_home %>
-</p>
-
-<p>
-  <strong>Phone mob:</strong>
-  <%= @user_profile.phone_mob %>
-</p>
-
-<p>
-  <strong>Profession:</strong>
-  <%= @user_profile.profession %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @user_profile.title %>
-</p>
-
-<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
-<%= link_to 'Back', user_profiles_path %>
