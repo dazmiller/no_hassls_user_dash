@@ -65,13 +65,6 @@ ActiveRecord::Schema.define(version: 20160329231848) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "playground", primary_key: "equip_id", force: true do |t|
-    t.string "type",         limit: 50, null: false
-    t.string "color",        limit: 25, null: false
-    t.string "location",     limit: 25
-    t.date   "install_date"
-  end
-
   create_table "user_profiles", force: true do |t|
     t.integer  "user_id"
     t.string   "first_name"
